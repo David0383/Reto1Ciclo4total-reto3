@@ -1,5 +1,6 @@
 package com.scrum7;
 
+
 import com.scrum7.repositoryCrud.OrderCrudRepository;
 import com.scrum7.repositoryCrud.ProductCrudRepository;
 import com.scrum7.repositoryCrud.UserCrudRepository;
@@ -11,9 +12,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Scrum7Application implements CommandLineRunner {
 
-    public static void main (String[] args) {
-        SpringApplication.run(Scrum7Application.class, args);
-    }
 
     @Autowired
     private ProductCrudRepository crudRepository;

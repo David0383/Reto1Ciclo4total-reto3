@@ -10,4 +10,15 @@ class Scrum7ApplicationTests {
     void contextLoads() {
     }
 
+    @Test
+    void main() {
+    }
+
+    @Test
+    void testMain() {
+    }
+
+    @Test
+    void run() {
+    }
 }
