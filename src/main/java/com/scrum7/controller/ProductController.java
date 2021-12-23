@@ -16,6 +16,8 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/cleaningproduct")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,
+        RequestMethod.PUT,RequestMethod.DELETE})
 public class ProductController {
     @Autowired
     private ProductService servicio;
