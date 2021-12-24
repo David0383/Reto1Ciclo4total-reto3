@@ -16,37 +16,37 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/cleaningproduct")
-@CrossOrigin(origins = "*", methods = {RequestMethod.GET,RequestMethod.POST,
-        RequestMethod.PUT,RequestMethod.DELETE})
+@CrossOrigin("*")
 public class ProductController {
+
     @Autowired
-    private ProductService servicio;
+    private ProductService productService;
 
     @GetMapping("/all")
-    public List<Product> listAll() {
-        return servicio.getAll();
+    public List<Product> getAll() {
+        return productService.getAll();
     }
 
     @GetMapping("/{reference}")
     public Optional<Product> getProduct(@PathVariable("reference") String reference) {
-        return servicio.getProduct(reference);
+        return productService.getProduct(reference);
     }
 
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
-    public Product create(@RequestBody Product product) {
-        return servicio.create(product);
+    public Product create(@RequestBody Product gadget) {
+        return productService.create(gadget);
     }
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)
-    public Product update(@RequestBody Product product) {
-        return servicio.update(product);
+    public Product update(@RequestBody Product gadget) {
+        return productService.update(gadget);
     }
 
     @DeleteMapping("/{reference}")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean delete(@PathVariable("reference") String reference) {
-        return servicio.delete(reference);
+        return productService.delete(reference);
     }
 }
