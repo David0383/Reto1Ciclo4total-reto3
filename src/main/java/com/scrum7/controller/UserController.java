@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
+import java.util.Optional;
 
 /**
  *
@@ -24,8 +25,13 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/all")
-    public List<User> getAll(){
+    public List<User> getAll() {
         return userService.getAll();
+    }
+
+    @GetMapping("/{id}")
+    public Optional<User> getUser(@PathVariable("id") int id) {
+        return userService.getUser(id);
     }
 
     @PostMapping("/new")

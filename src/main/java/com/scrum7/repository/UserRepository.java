@@ -36,6 +36,9 @@ public class UserRepository {
     public Optional<User> autenticarUsuario(String email, String password){
         return userCrudRepository.findByEmailAndPassword(email, password);
     }
+    public Optional<User> lastUserId(){
+        return userCrudRepository.findTopByOrderByIdDesc();
+    }
 
 
 }
